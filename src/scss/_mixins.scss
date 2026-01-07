@@ -1,0 +1,58 @@
+// Mixin para centrar elementos con flexbox
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Mixin para crear tarjetas con sombra y hover effect
+@mixin card-effect($shadow: $box-shadow-sm, $hover-shadow: $box-shadow) {
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+  transition: all $transition-speed $transition-ease;
+  
+  &:hover {
+    box-shadow: $hover-shadow;
+    transform: translateY(-5px);
+  }
+}
+
+// Mixin para botones personalizados
+@mixin custom-button($bg-color, $text-color: #fff) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  padding: $spacing-xs $spacing-md;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: all $transition-speed $transition-ease;
+  font-family: $font-primary;
+  font-weight: 600;
+  
+  &:hover {
+    background-color: darken($bg-color, 10%);
+    transform: scale(1.05);
+  }
+  
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+// Mixin para gradientes
+@mixin gradient-bg($color1, $color2) {
+  background: linear-gradient(135deg, $color1 0%, $color2 100%);
+}
+
+// Mixin para responsive typography
+@mixin responsive-text($mobile, $tablet, $desktop) {
+  font-size: $mobile;
+  
+  @media (min-width: $breakpoint-md) {
+    font-size: $tablet;
+  }
+  
+  @media (min-width: $breakpoint-lg) {
+    font-size: $desktop;
+  }
+}

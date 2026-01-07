@@ -1,0 +1,161 @@
+// Hero Section
+.hero-section {
+  @include gradient-bg($primary-color, darken($primary-color, 15%));
+  color: white;
+  padding: $spacing-xl 0;
+  margin-bottom: $spacing-lg;
+  
+  h2 {
+    font-family: $font-primary;
+    font-weight: 700;
+    margin-bottom: $spacing-md;
+  }
+  
+  p {
+    font-family: $font-secondary;
+    font-size: $font-size-large;
+  }
+}
+
+// Cards personalizadas
+.card {
+  @include card-effect;
+  border: none;
+  
+  .card-body {
+    padding: $spacing-md;
+    
+    .card-title {
+      color: $dark-color;
+      font-family: $font-primary;
+      font-weight: 600;
+      margin-bottom: $spacing-sm;
+    }
+    
+    .card-text {
+      color: lighten($dark-color, 20%);
+      font-family: $font-secondary;
+    }
+  }
+  
+  .btn {
+    @include custom-button($primary-color);
+  }
+}
+
+// Gradientes para imágenes de cards
+.bg-gradient-primary {
+  @include gradient-bg($primary-color, darken($primary-color, 20%));
+}
+
+.bg-gradient-secondary {
+  @include gradient-bg($secondary-color, darken($secondary-color, 20%));
+}
+
+.bg-gradient-accent {
+  @include gradient-bg($accent-color, darken($accent-color, 20%));
+}
+
+// Navbar personalizada
+.navbar {
+  box-shadow: $box-shadow;
+  
+  .navbar-brand {
+    font-family: $font-primary;
+    font-weight: 700;
+    font-size: $font-size-large;
+    
+    i {
+      color: $accent-color;
+    }
+  }
+  
+  .nav-link {
+    font-family: $font-secondary;
+    margin: 0 $spacing-xs;
+    transition: all $transition-speed $transition-ease;
+    
+    &:hover {
+      transform: translateY(-2px);
+    }
+    
+    &.active {
+      font-weight: 600;
+    }
+  }
+}
+
+// Secciones
+section {
+  h2 {
+    font-family: $font-primary;
+    color: $dark-color;
+    font-weight: 700;
+    margin-bottom: $spacing-lg;
+  }
+}
+
+// Footer
+footer {
+  margin-top: $spacing-xl;
+  
+  p {
+    font-family: $font-secondary;
+    margin: 0;
+  }
+}
+
+// Modales
+.modal {
+  .modal-content {
+    border-radius: $border-radius-lg;
+    border: none;
+    box-shadow: $box-shadow-lg;
+  }
+  
+  .modal-header {
+    background-color: $primary-color;
+    color: white;
+    border-top-left-radius: $border-radius-lg;
+    border-top-right-radius: $border-radius-lg;
+    
+    .modal-title {
+      font-family: $font-primary;
+      font-weight: 600;
+    }
+    
+    .btn-close {
+      filter: invert(1);
+    }
+  }
+  
+  .modal-body {
+    font-family: $font-secondary;
+    padding: $spacing-lg;
+    
+    ul {
+      padding-left: $spacing-md;
+      
+      li {
+        margin-bottom: $spacing-xs;
+      }
+    }
+  }
+  
+  .modal-footer {
+    border-top: 1px solid $light-color;
+    
+    .btn-primary {
+      @include custom-button($primary-color);
+    }
+  }
+}
+
+// Efectos hover para iconos
+i {
+  transition: all $transition-speed $transition-ease;
+}
+
+.card:hover i {
+  transform: scale(1.1);
+}
