@@ -1,8 +1,7 @@
-// Importar variables y mixins primero
-@import 'variables';
-@import 'mixins';
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'components';
 
-// Reset y configuración base
 * {
   margin: 0;
   padding: 0;
@@ -16,10 +15,7 @@ body {
   background-color: $bg-light;
 }
 
-// Importar componentes
-@import 'components';
 
-// Utilidades adicionales
 .bg-light {
   background-color: $bg-light !important;
 }
@@ -28,7 +24,6 @@ body {
   background-color: $bg-dark !important;
 }
 
-// Espaciado personalizado
 .py-5 {
   padding-top: $spacing-xl;
   padding-bottom: $spacing-xl;
@@ -38,7 +33,6 @@ body {
   margin-bottom: $spacing-xl;
 }
 
-// Animaciones suaves para toda la página
 * {
   transition: none;
 }
@@ -47,14 +41,12 @@ a, button, .card, .nav-link {
   transition: all $transition-speed $transition-ease;
 }
 
-// Mejoras de accesibilidad
 button:focus,
 a:focus {
   outline: 2px solid $primary-color;
   outline-offset: 2px;
 }
 
-// Responsive helpers
 @media (max-width: $breakpoint-md) {
   .hero-section {
     padding: $spacing-lg 0;
@@ -69,7 +61,6 @@ a:focus {
   }
 }
 
-// Print styles
 @media print {
   .navbar,
   footer,
